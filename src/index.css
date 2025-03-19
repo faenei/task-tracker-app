@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@id486809034 (@layer) base {
+	:root {
+		--gradient-primary: linear-gradient(135deg, #7c3aed, #21d4fd);
+		--glass-bg: rgba(255, 255, 255, 0.15);
+		--glass-border: rgba(255, 255, 255, 0.25);
+	}
+	.dark {
+		--gradient-primary: linear-gradient(135deg, #9f7aea, #38bdf8);
+		--glass-bg: rgba(31, 41, 55, 0.5);
+		--glass-border: rgba(255, 255, 255, 0.15);
+	}
+}
+
+@id486809034 (@layer) utilities {
+	.bg-gradient-primary {
+		background: var(--gradient-primary);
+	}
+	.glass-effect {
+		background: var(--glass-bg);
+		border: 1px solid var(--glass-border);
+		backdrop-filter: blur(8px);
+	}
+}
+
+@keyframes fadeSlide {
+	from {
+		opacity: 0;
+		transform: translateY(15px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+.animate-fade-slide {
+	animation: fadeSlide 0.4s ease-out forwards;
+}
